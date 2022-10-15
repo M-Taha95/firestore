@@ -15,56 +15,7 @@ class _SignUpState extends State<SignUp> {
   final CollectionReference products =
       FirebaseFirestore.instance.collection('products');
 
-  // Future<void> _create([DocumentSnapshot? documentSnapshot]) async {
-  //   await showModalBottomSheet(
-  //       isScrollControlled: true,
-  //       context: context,
-  //       builder: (BuildContext ctx) {
-  //         return Padding(
-  //           padding: EdgeInsets.only(
-  //               top: 20,
-  //               left: 20,
-  //               right: 20,
-  //               bottom: MediaQuery.of(ctx).viewInsets.bottom + 20),
-  //           child: Column(
-  //             mainAxisSize: MainAxisSize.min,
-  //             crossAxisAlignment: CrossAxisAlignment.start,
-  //             children: [
-  //               TextField(
-  //                 controller: nameCont,
-  //                 decoration: const InputDecoration(labelText: 'Name'),
-  //               ),
-  //               TextField(
-  //                 keyboardType:
-  //                     const TextInputType.numberWithOptions(decimal: true),
-  //                 controller: priceCont,
-  //                 decoration: const InputDecoration(
-  //                   labelText: 'Price',
-  //                 ),
-  //               ),
-  //               const SizedBox(
-  //                 height: 20,
-  //               ),
-  //               ElevatedButton(
-  //                 child: const Text('Create'),
-  //                 onPressed: () async {
-  //                   final String name = nameCont.text;
-  //                   var priceCont;
-  //                   final double? price = double.tryParse(priceCont.text);
-  //                   if (price != null) {
-  //                     await products.add({"name": name, "price": price});
 
-  //                     nameCont.text = '';
-  //                     priceCont.text = '';
-  //                     Navigator.of(context).pop();
-  //                   }
-  //                 },
-  //               )
-  //             ],
-  //           ),
-  //         );
-  //       });
-  // }
 
   Future<void> update([DocumentSnapshot? documentSnapshot]) async {
     if (documentSnapshot != null) {
